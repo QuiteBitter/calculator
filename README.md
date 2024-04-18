@@ -27,5 +27,5 @@ basic arithmetical operations.
 5. Run `python calculator.py` to start the calculator.
 
 
-   Note: Above instructions are for environments where Python 3 is the only version installed. If Python 2 and Python 3,
-   both are installed in your environment then use `python3` instead of `python` for the above command.
+Note: Above instructions are for environments where Python 3 is the only version installed. If Python 2 and Python 3,
+both are installed in your environment then use `python3` instead of `python` for the above command.
