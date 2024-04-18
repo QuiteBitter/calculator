@@ -1,0 +1,20 @@
+name: Mirror Repository to Another GitHub Repo
+
+on: [push]
+
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Mirror the GitHub Repository
+      uses: actions/checkout@v3
+      with:
+        fetch-depth: '0'
+    - name: Push Mirror
+      run: |
+        git push --mirror https://github.com/SRH-I4/python_calculator.SCHULZ.git
+      env:
+        GIT_AUTHOR_NAME: 'Rob S.'
+        GIT_AUTHOR_EMAIL: 'schulz.2510@gmail.com'
+        GIT_COMMITTER_NAME: 'Rob S.'
+        GIT_COMMITTER_EMAIL: 'schulz.2510@gmail.com'
