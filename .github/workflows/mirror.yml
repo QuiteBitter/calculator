@@ -12,7 +12,7 @@ jobs:
         fetch-depth: '0'
     - name: Push Mirror
       run: |
-        git push --mirror https://github.com/SRH-I4/python_calculator.SCHULZ.git
+        git push --https://github.com/SRH-I4/python_calculator.SCHULZ
       env:
         GIT_AUTHOR_NAME: 'Rob S.'
         GIT_AUTHOR_EMAIL: 'schulz.2510@gmail.com'
