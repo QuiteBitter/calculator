@@ -6,15 +6,19 @@ jobs:
   mirror:
     runs-on: ubuntu-latest
     steps:
-    - name: Mirror the GitHub Repository
+    - name: Checkout the repo
       uses: actions/checkout@v3
       with:
         fetch-depth: '0'
+
+    - name: Setup Git Config
+      run: |
+        git config user.name "${{ secrets.GIT_COMMITTER_NAME }}"
+        git config user.email "${{ secrets.GIT_COMMITTER_EMAIL }}"
+
     - name: Push Mirror
       run: |
-        git push --https://github.com/SRH-I4/python_calculator.SCHULZ.git
+        git push --mirror https://x-access-token:${{ secrets.MIRROR_GITHUB_TOKEN }}@github.com/SRH-I4/python_calculator.SCHULZ.git
       env:
-        GIT_AUTHOR_NAME: 'Rob S.'
-        GIT_AUTHOR_EMAIL: 'schulz.2510@gmail.com'
-        GIT_COMMITTER_NAME: 'Rob S.'
-        GIT_COMMITTER_EMAIL: 'schulz.2510@gmail.com'
+        GIT_COMMITTER_NAME: ${{ secrets.GIT_COMMITTER_NAME }}
+        GIT_COMMITTER_EMAIL: ${{ secrets.GIT_COMMITTER_EMAIL }}
