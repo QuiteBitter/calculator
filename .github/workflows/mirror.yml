@@ -13,8 +13,8 @@ jobs:
 
     - name: Setup Git Config
       run: |
-        git config user.name "${{ variable.GIT_COMMITTER_NAME }}"
-        git config user.email "${{ variable.GIT_COMMITTER_EMAIL }}"
+        git config user.name "${{ secrets.GIT_COMMITTER_NAME }}"
+        git config user.email "${{ secrets.GIT_COMMITTER_EMAIL }}"
 
     - name: Push Mirror
       run: |
